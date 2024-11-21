@@ -34,5 +34,5 @@ This ensures that clients have all the necessary information to handle the chang
 Make sure you have **Node.js** and **npm** installed. Then, run the following command to install the required dependencies:
 
 ```bash
-npm install express crypto cors
+npm install express cors
 node webhook_example.js
