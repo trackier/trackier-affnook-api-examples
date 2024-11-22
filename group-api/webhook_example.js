@@ -23,8 +23,9 @@ app.post('/webhook', (req, res) => {
     // Extract headers and body from the request
     const { headers, body } = req;
 
-    // Destructure the required fields from the body
-    const { timestamp } = body;
+    // Destructure the data from the body
+    const { data } = body;
+    const { timestamp } = data;
 
     // Log the request body and headers for debugging purposes
     console.log("body is", body);
@@ -42,7 +43,7 @@ app.post('/webhook', (req, res) => {
     // Step 2: Compare the recalculated hashed key with the one received in the headers
     if (receivedHashedKey === recalculatedHashedKey) {
         // Validation successful, process the event
-        console.log('Valid event received:', body);
+        console.log('Valid event received:', data);
 
         // Respond back with a success status
         res.status(200).json({ success: true, message: 'Event processed successfully' });
